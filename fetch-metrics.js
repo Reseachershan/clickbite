@@ -25,9 +25,13 @@ function getDateRanges(startDate, endDate, mode = 'day') {
 
   while (current <= end) {
     let next = new Date(current);
-    if (mode === 'day') next.setDate(current.getDate() + 1);
-    else if (mode === 'week') next.setWeek(current.getWeek() + 7);
-    else if (mode === 'month') next.setMonth(current.getMonth() + 1);
+     if (mode === 'day') {
+      next.setDate(current.getDate() + 1);
+    } else if (mode === 'week') {
+      next.setDate(current.getDate() + 7); // Correct way to add 1 week
+    } else if (mode === 'month') {
+      next.setMonth(current.getMonth() + 1);
+    }
 
     const rangeStart = current.toISOString().split('T')[0];
     const rangeEnd = new Date(Math.min(next, end)).toISOString().split('T')[0];
