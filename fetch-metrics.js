@@ -26,7 +26,7 @@ function getDateRanges(startDate, endDate, mode = 'day') {
   while (current <= end) {
     let next = new Date(current);
     if (mode === 'day') next.setDate(current.getDate() + 1);
-    else if (mode === 'week') next.setDate(current.getDate() + 7);
+    else if (mode === 'week') next.setWeek(current.getWeek() + 7);
     else if (mode === 'month') next.setMonth(current.getMonth() + 1);
 
     const rangeStart = current.toISOString().split('T')[0];
@@ -48,6 +48,48 @@ app.get('/fetch-metrics', async (req, res) => {
     "asmrtv2022": { "portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.00, "business_split": { "kaleb": 0.40, "blake": 0.60 } },
     "asmrlive22": { "portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.00, "business_split": { "kaleb": 0.40, "blake": 0.60 } },
     "petstown": { "portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": { "kaleb": 0.40, "blake": 0.60 } },
+    "getcrafty.now": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "makeupmania_1": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "build_it0": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.05, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "experts129": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "what_tech": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "kind_world2022": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "satisfyingzone1": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "moodlab1212": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "mouldingjewels": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.05, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "thats_genius": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "professiona8678": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "quantum-tech": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "rustyhands22": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.05, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "wrapspecial": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "revampedrevampe": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "food_pirates": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "horridhouse": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+
+    // # MediaNug
+    "beautyvibes9": {"portal_split": 0.70, "agency_split": 0.40, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "bestofshow01": {"portal_split": 0.70, "agency_split": 0.40, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "fitnessmemesnug": {"portal_split": 0.70, "agency_split": 0.40, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "gymcrush6": {"portal_split": 0.70, "agency_split": 0.40, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "healyoself3": {"portal_split": 0.70, "agency_split": 0.40, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "poorsport7": {"portal_split": 0.70, "agency_split": 0.40, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "swiperightshow": {"portal_split": 0.70, "agency_split": 0.40, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "therealmvps9": {"portal_split": 0.70, "agency_split": 0.40, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+
+    // # Uncovered
+    "mattcaught": {"portal_split": 0.50, "agency_split": 0.70, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "scrubsshow": {"portal_split": 0.50, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "caughtjordan": {"portal_split": 0.50, "agency_split": 0.50, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+
+    // # 1026Ventures
+    "cuteanimals_tv": {"portal_split": 0.70, "agency_split": 0.60, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+    "failz_show": {"portal_split": 0.70, "agency_split": 0.60, "editor_split": 0.10, "business_split": {"kaleb": 0.40, "blake": 0.60}},
+
+    // # Burt Media Group
+    "sosoothing.tv": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.00, "business_split": {"kaleb": 0.30, "blake": 0.70}},
+    "epichumanbeings": {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.00, "business_split": {"kaleb": 0.30, "blake": 0.70}},
+    "suspect.tv":     {"portal_split": 0.70, "agency_split": 0.50, "editor_split": 0.00, "business_split": {"kaleb": 0.30, "blake": 0.70}}
+
   };
 
   const fetchMetricsForShow = async (showId, start, end) => {
